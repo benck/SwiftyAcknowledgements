@@ -14,6 +14,22 @@ public class AcknowledgementsTableViewController: UITableViewController {
 
     // MARK: Properties
     
+    open var titleFont = UIFont.boldSystemFont(ofSize: 18) {
+        didSet { tableView.reloadData() }
+    }
+    
+    open var titleColor = UIColor.black {
+        didSet { tableView.reloadData() }
+    }
+    
+    open var contentFont = UIFont.systemFont(ofSize: 13) {
+        didSet { tableView.reloadData() }
+    }
+    
+    open var contentColor = UIColor.darkGray {
+        didSet { tableView.reloadData() }
+    }
+    
     /// The text to be displayed in the **UITableView**'s **tableHeader**, if any.
     @IBInspectable public var headerText: String? {
         didSet {
@@ -129,6 +145,7 @@ public class AcknowledgementsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseId)
+        tableView.register(AcknowledgementLightTableViewCell.self, forCellReuseIdentifier: UITableViewCell.simpleCellReuseId)
         
         headerView.bounds = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
         tableView.tableHeaderView = headerView
@@ -152,10 +169,24 @@ public class AcknowledgementsTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.reuseId, for: indexPath)
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.reuseId, for: indexPath)
         cell.textLabel?.text = acknowledgements[indexPath.row].title
         cell.accessoryType = .disclosureIndicator
-        return cell
+        return cell*/
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.simpleCellReuseId, for: indexPath) as? AcknowledgementLightTableViewCell
+        cell?.titleLabel.text = acknowledgements[indexPath.row].title
+        cell?.titleLabel.font = titleFont
+        cell?.titleLabel.textColor = titleColor
+        
+        cell?.contentLabel.text = acknowledgements[indexPath.row].text
+        cell?.contentLabel.font = contentFont
+        cell?.contentLabel.textColor = contentColor
+        
+        cell?.isUserInteractionEnabled = false
+        
+        cell?.layoutIfNeeded()
+        return cell ?? UITableViewCell()
     }
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -200,6 +231,7 @@ private extension UITableViewCell {
     static var reuseId: String {
         return String(describing: self)
     }
+    static let simpleCellReuseId = "AcknowledgementSimpleTableViewCell"
 }
 
 // MARK: - HeaderFooterView

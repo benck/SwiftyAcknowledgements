@@ -42,6 +42,7 @@
 		52FC37951B9F6BEF005EFE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FC37931B9F6BEF005EFE87 /* Main.storyboard */; };
 		52FC37971B9F6BEF005EFE87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FC37961B9F6BEF005EFE87 /* Assets.xcassets */; };
 		52FC379A1B9F6BEF005EFE87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FC37981B9F6BEF005EFE87 /* LaunchScreen.storyboard */; };
+		B546A74D1F9358D200076B3E /* AcknowledgementLightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546A74C1F9358D200076B3E /* AcknowledgementLightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		52FC37961B9F6BEF005EFE87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52FC37991B9F6BEF005EFE87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52FC379B1B9F6BEF005EFE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B546A74C1F9358D200076B3E /* AcknowledgementLightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementLightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			children = (
 				52FC37831B9F6A94005EFE87 /* Acknowledgement.swift */,
 				52FC37841B9F6A94005EFE87 /* AcknowledgementsTableViewController.swift */,
+				B546A74C1F9358D200076B3E /* AcknowledgementLightTableViewCell.swift */,
 				52FC37851B9F6A94005EFE87 /* AcknowledgementViewController.swift */,
 				527046711BE0EE86004CD4FC /* UIFontDescriptorExtensions.swift */,
 				52FC377A1B9F6A0A005EFE87 /* SwiftyAcknowledgements.h */,
@@ -672,6 +675,7 @@
 			files = (
 				52FC37871B9F6A94005EFE87 /* AcknowledgementsTableViewController.swift in Sources */,
 				52FC37881B9F6A94005EFE87 /* AcknowledgementViewController.swift in Sources */,
+				B546A74D1F9358D200076B3E /* AcknowledgementLightTableViewCell.swift in Sources */,
 				527046721BE0EE86004CD4FC /* UIFontDescriptorExtensions.swift in Sources */,
 				52FC37861B9F6A94005EFE87 /* Acknowledgement.swift in Sources */,
 			);
